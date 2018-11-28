@@ -17,63 +17,108 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <style type="text/css">
-    .section-1{
-      background: url(../image/background.jpg) center center;
-      background-size: cover;
-      height: 100vh;
+    .basic{
+      background-color: #c9e4a9;
     }
-    .block3{
+    .block1{
       background-color: #FAE3C4;
+	  min-height: 50px;
     }
     .block4{
       background-color: #c8b496;
+	  min-height: 50px;
+	  text-align: center;
     }
-    section h2{
-      color: #fff;
-      font-size: 40px;
-      padding: 20px;
-      background-color: rgba(0,0,0,.5);
-      box-shadow: 0 0 10px rgba(255,255,255,.3)
+    .block3{
+      background-color: #aacab4;
+	  min-height: 50px;
     }
+    .block2{
+      background-color: #e3c2a5;
+	  min-height: 50px;
+    }
+    .block5{
+      background-color: #e3ab25;
+	  margin: 10px;
+	  min-height: 120px;
+	  border-radius: 10px;
+    }
+    .block6{
+      background-color: #a3b4c5;
+	  margin: 5px;
+	  min-height: 50px;
+	  border-radius: 5px;
+	  text-align: center;
+    }
+	.head6{
+	  text-align: center;
+	  margin: 5px;
+	}
+	.input{
+	  margin: 5px;
+	  margin-bottom: 15px;
+	  text-align: center;
+	}
   </style>
 
-  <title>Hello, world!</title>
+  <title>MedicalCRM</title>
 </head>
-<body>
-<section class="section-1">
-  <div class="container">
-    <div class="row align-items-center justify-content-center">
-      <div class="col-12 text-center">
-        <h2>Допро пожаловать на портал</h2>
-      </div>
-      <div class="col-12 block4">
-        <h5>Форма входа</h5>
-      </div>
-      <div class="col-12 block3">
-        <h5>Форма для поиска пациентов</h5>
-        <div id="form">
-          <form action="/getroute" onsubmit="return validRoute()" method="get">
-            <table align="center">
-              <tr>
-                <td><label for="lastName"><span class="bold">Фамилия:</span> </label></td><td><input type="text" id="lastName" name="lastName"></td>
-                <td><label for="firstName"><span class="bold">Имя:</span> </label></td><td><input type="text" id="firstName" name="firstName"></td>
-                <td><label for="middleName"><span class="bold">Отчество:</span> </label></td><td><input type="text" id="middleName" name="middleName"></td>
-              </tr>
-              <tr>
-                <td><label for="snils"><span class="bold">СНИЛС:</span> </label></td><td><input type="text" id="snils" name="snils"></td>
-                <td><label for="oms"><span class="bold">ОМС:</span> </label></td><td><input type="text" id="oms" name="oms"></td>
-                <td><label for="numberPassport"><span class="bold">Номер пасспорта:</span> </label></td><td><input type="text" id="numberPassport" name="numberPassport"></td>
-              </tr>
-              <tr align="center">
-                <td colspan="6" align="right"><input type="submit" value="Найти"></td>
-              </tr>
-            </table>
-          </form>
-          <br>
-      </div>
-    </div>
-  </div>
-</section>
+<body class="basic">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 block1">
+				<h1>MedicalCRM</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 block2">
+				<div class="row justify-content-end">
+					<div class="col-lg-3 block5">
+						<h6 class="head6">Вход/Регистрация</h6>
+						<div class="row justify-content-center">
+							<div class="col-10 input">
+								<form>
+									<label for="login">Логин</label><br>
+									<input type="text" id="login"><br>
+									<label for="password">Пароль</label><br>
+									<input type="password" id="password">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 block6">
+						Главная
+					</div>
+					<div class="col-md-2 block6">
+						Врачи
+					</div>
+					<div class="col-md-2 block6">
+						Клиники
+					</div>
+					<div class="col-md-2 block6">
+						Контакты
+					</div>
+					<div class="col-md-2 block6">
+						О проекте
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 block3">
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 block4">
+				MedicalCRM<br>2018г.
+			</div>
+		</div>
+	</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
