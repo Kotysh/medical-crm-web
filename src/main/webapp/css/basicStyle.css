@@ -1,0 +1,76 @@
+
+.basic{
+    background-color: #c9e4a9;
+}
+.block1{
+    background-color: #FAE3C4;
+    min-height: 50px;
+}
+.block4{
+    background-color: #c8b496;
+    min-height: 50px;
+    text-align: center;
+}
+.block3{
+    background-color: #aacab4;
+    min-height: 50px;
+}
+.block2{
+    background-color: #e3c2a5;
+    min-height: 50px;
+}
+.block5{
+    background-color: #e3ab25;
+    margin: 10px;
+    min-height: 120px;
+    border-radius: 10px;
+}
+.block6{
+    background-color: #a3b4c5;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    min-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+.block6:hover{
+    background-color: #778899;
+}
+.head6{
+    text-align: center;
+    margin: 5px;
+}
+.input{
+    margin: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.enter{
+    margin: 3px;
+}
+a, a:hover, a:active, a:visited, a:focus{
+    color: #000000;
+    text-decoration: none
+}
+.regHref{
+    color: #4c4c4c;
+    text-decoration: underline;
+}
+.regHref:hover{
+    color: #6e6e6e;
+    text-decoration: underline;
+}
+.blockDoctor{
+    background-color: #e2dd57;
+    min-height: 50px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 12px;
+}
+a.doctorHref{
+    color: #5659b3;
+}
+a.doctorHref:hover{
+    color: #7174ff;
+}

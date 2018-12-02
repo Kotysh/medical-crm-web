@@ -6,7 +6,7 @@
 
     <groupId>ru.dmitriikotiashov</groupId>
     <artifactId>medical-crm-bl</artifactId>
-    <version>0.0.0.1</version>
+    <version>0.0.0.2</version>
     <properties>
         <tomcat.version>9.0.2</tomcat.version>
         <junit.version>4.12</junit.version>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>ru.dmitriikotiashov</groupId>
             <artifactId>medical-crm-api</artifactId>
-            <version>0.0.1.0</version>
+            <version>0.0.1.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

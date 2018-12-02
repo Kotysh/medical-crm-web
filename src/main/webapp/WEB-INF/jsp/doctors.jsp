@@ -1,3 +1,22 @@
+<%@ page import="ru.dmitriikotiashov.entities.Doctor" %>
+<%@ page import="java.util.List" %><%
+
+	List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctors");
+
+	StringBuilder doctorsString = new StringBuilder("<div class=\"row justify-content-center\">\n");
+
+	for(Doctor d : doctors){
+
+	    doctorsString.append("<div class=\"col-10 blockDoctor\">\n" +
+				"ФИО: "+d.getPerson().getFirstName()+" "+d.getPerson().getMiddleName()+" "+d.getPerson().getLastName()+"<br>\n" +
+				"должность: "+d.getProfession().getName()+"<br>\n" +
+				"<a class=\"doctorHref\" href=\"doctor\\"+d.getDoctorId()+"\">подробнее...</a>\n" +
+				"</div");
+	}
+
+	doctorsString.append("</div>");
+
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="ru">
@@ -27,7 +46,7 @@
 						<h6 class="head6">Вход/<a href="/" class="regHref">Регистрация</a></h6>
 						<div class="row justify-content-center">
 							<div class="col-10 input">
-								<form action="/asdf" method="put">
+								<form>
 									<label for="login">Логин</label><br>
 									<input type="text" id="login"><br>
 									<label for="password">Пароль</label><br>
@@ -59,7 +78,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 block3">
-
+				<h3>Сотрудники зарегестрированные в системе</h3>
+				<%=doctorsString%>
 			</div>
 		</div>
 		<div class="row">
