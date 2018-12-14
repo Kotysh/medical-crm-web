@@ -36,4 +36,8 @@ public class IndexController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/contacts", method = RequestMethod.GET)
+    public String getContacts(){
+        return "contacts";
+    }
 }

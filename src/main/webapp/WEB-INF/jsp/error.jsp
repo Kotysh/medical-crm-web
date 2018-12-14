@@ -1,5 +1,5 @@
-<%@ page import="ru.dmitriikotiashov.entities.Doctor" %>
 <%@ page import="ru.dmitriikotiashov.entities.Person" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String login = (String) request.getSession().getAttribute("login");
     String password = (String) request.getSession().getAttribute("password");
@@ -22,20 +22,6 @@
         header = "<h6 class=\"head6\">Вход/<a href=\"/\" class=\"regHref\">Регистрация</a></h6>";
     }
 %>
-<%
-
-    Doctor doctor = (Doctor) request.getAttribute("doctor");
-
-    StringBuilder doctorString = new StringBuilder("<div class=\"row justify-content-center\">\n");
-    doctorString.append("<div class=\"col-10 blockDoctor\">\n" +
-            "ФИО: "+doctor.getPerson().getFirstName()+" "+doctor.getPerson().getMiddleName()+" "+doctor.getPerson().getLastName()+"<br>\n" +
-            "должность: "+doctor.getProfession().getName()+"<br>\n" +
-            "образование: " +doctor.getHigherEducation().getName()+" "+doctor.getBeginYear()+"-"+doctor.getEndYear()+"<br>\n" +
-            "ученая степень: " +doctor.getScientificDegree().getName()+"<br>\n" +
-            "о себе: "+doctor.getAboutMe()+"<br>\n" +
-            "</div></div>");
-%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -90,11 +76,10 @@
     </div>
     <div class="row">
         <div class="col-md-12 block3">
-            <h3>Информация о враче</h3>
-            <%=doctorString%>
-            <hr>
-            <h3>комментарии</h3>
-            <hr>
+            <h1 align="center">Если Вы на этой странице, значит что то пошло не так...</h1>
+            <h2>либо некорректный url</h2>
+            <h2>либо ошибка в логине или пароле</h2>
+            <h2>ну может ещё что то сломалось...</h2>
         </div>
     </div>
     <div class="row">

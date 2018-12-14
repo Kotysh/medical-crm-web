@@ -22,19 +22,6 @@
         header = "<h6 class=\"head6\">Вход/<a href=\"/\" class=\"regHref\">Регистрация</a></h6>";
     }
 %>
-<%
-
-    Doctor doctor = (Doctor) request.getAttribute("doctor");
-
-    StringBuilder doctorString = new StringBuilder("<div class=\"row justify-content-center\">\n");
-    doctorString.append("<div class=\"col-10 blockDoctor\">\n" +
-            "ФИО: "+doctor.getPerson().getFirstName()+" "+doctor.getPerson().getMiddleName()+" "+doctor.getPerson().getLastName()+"<br>\n" +
-            "должность: "+doctor.getProfession().getName()+"<br>\n" +
-            "образование: " +doctor.getHigherEducation().getName()+" "+doctor.getBeginYear()+"-"+doctor.getEndYear()+"<br>\n" +
-            "ученая степень: " +doctor.getScientificDegree().getName()+"<br>\n" +
-            "о себе: "+doctor.getAboutMe()+"<br>\n" +
-            "</div></div>");
-%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="ru">
@@ -90,11 +77,9 @@
     </div>
     <div class="row">
         <div class="col-md-12 block3">
-            <h3>Информация о враче</h3>
-            <%=doctorString%>
-            <hr>
-            <h3>комментарии</h3>
-            <hr>
+            <h3>Возникли вопросы по работе сервиса? Свяжитесь с нами:</h3>
+            <h5>medicalcrm2018@mail.ru</h5>
+            <h5>+799999999999</h5>
         </div>
     </div>
     <div class="row">
