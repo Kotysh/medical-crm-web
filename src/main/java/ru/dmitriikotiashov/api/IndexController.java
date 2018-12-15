@@ -40,4 +40,9 @@ public class IndexController {
     public String getContacts(){
         return "contacts";
     }
+
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String getAbout(){
+        return "about";
+    }
 }

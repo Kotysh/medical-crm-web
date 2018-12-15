@@ -78,8 +78,9 @@
     <div class="row">
         <div class="col-md-12 block3">
             <h3>Возникли вопросы по работе сервиса? Свяжитесь с нами:</h3>
-            <h5>medicalcrm2018@mail.ru</h5>
-            <h5>+799999999999</h5>
+            <hr>
+            <h6>e-mail: medicalcrm2018@mail.ru</h6>
+            <h6>telephone: +799999999999</h6>
         </div>
     </div>
     <div class="row">
