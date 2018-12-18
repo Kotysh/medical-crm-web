@@ -2,44 +2,18 @@
 <%@ page import="java.util.List" %>
 <%@ page import="ru.dmitriikotiashov.entities.Person" %>
 <%
-	String login = (String) request.getSession().getAttribute("login");
-	String password = (String) request.getSession().getAttribute("password");
-	Person person = (Person) request.getSession().getAttribute("person");
-
-	String authorization, header;
-	if(login != null && password != null) {
-		authorization =
-				String.format("Добро пожаловать, %s %s", person.getFirstName(), person.getMiddleName());
-		header = "<h6 class=\"head6\"><a href=\"/exit\" class=\"regHref\">Выйти</a></h6>";
-	}else {
-		authorization = "\n" +
-				"\t\t\t\t\t\t\t\t<form action=\"/authorization\" method=\"post\">\n" +
-				"\t\t\t\t\t\t\t\t\t<label for=\"login\">Логин</label><br>\n" +
-				"\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"login\" name=\"login\"><br>\n" +
-				"\t\t\t\t\t\t\t\t\t<label for=\"password\">Пароль</label><br>\n" +
-				"\t\t\t\t\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"password\"><br>\n" +
-				"\t\t\t\t\t\t\t\t\t<input class=\"enter\" type=\"submit\" value=\"Войти\">\n" +
-				"\t\t\t\t\t\t\t\t</form>";
-		header = "<h6 class=\"head6\">Вход/<a href=\"/\" class=\"regHref\">Регистрация</a></h6>";
-	}
+    AuthorizationView authorizationView = new AuthorizationView();
+    DoctorView doctorView = new DoctorView();
 %>
 <%
-
+	Person person = (Person) request.getSession().getAttribute("person");
+	boolean isLog = request.getSession().getAttribute("isLog");
+	String authorization = authorizationView.getAuthorization(isLog, person);
+	String headerAuthForm = authorizationView.getHeader(isLog);
+%>
+<%
 	List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctors");
-
-	StringBuilder doctorsString = new StringBuilder("<div class=\"row justify-content-center\">\n");
-
-	for(Doctor d : doctors){
-
-	    doctorsString.append("<div class=\"col-10 blockDoctor\">\n" +
-				"ФИО: "+d.getPerson().getFirstName()+" "+d.getPerson().getMiddleName()+" "+d.getPerson().getLastName()+"<br>\n" +
-				"должность: "+d.getProfession().getName()+"<br>\n" +
-				"<a class=\"doctorHref\" href=\"doctor\\"+d.getDoctorId()+"\">подробнее...</a>\n" +
-				"</div");
-	}
-
-	doctorsString.append("</div>");
-
+	String doctorsHtml = doctorView.getDoctors(doctors);
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -67,7 +41,7 @@
 			<div class="col-md-12 block2">
 				<div class="row justify-content-end">
 					<div class="col-lg-3 block5">
-						<%=header%>
+						<%=headerAuthForm%>
 						<div class="row justify-content-center">
 							<div class="col-10 input">
 								<%=authorization%>
@@ -97,7 +71,7 @@
 		<div class="row">
 			<div class="col-md-12 block3">
 				<h3>Сотрудники зарегестрированные в системе</h3>
-				<%=doctorsString%>
+				<%=doctorsHtml%>
 			</div>
 		</div>
 		<div class="row">

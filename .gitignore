@@ -77,3 +77,5 @@ target/medical-crm-bl-0.0.0.1.jar
 .idea/libraries/Maven__ru_dmitriikotiashov_medical_crm_api_0_0_1_1.xml
 target/classes/ru/dmitriikotiashov/model/DoctorModel$1.class
 target/classes/ru/dmitriikotiashov/model/DoctorModel.class
+src/main/java/ru/dmitriikotiashov/controller/Authorization.java___jb_tmp___
+medical-crm-web.iml

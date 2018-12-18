@@ -1,26 +1,13 @@
 <%@ page import="ru.dmitriikotiashov.entities.Doctor" %>
 <%@ page import="ru.dmitriikotiashov.entities.Person" %>
 <%
-    String login = (String) request.getSession().getAttribute("login");
-    String password = (String) request.getSession().getAttribute("password");
-    Person person = (Person) request.getSession().getAttribute("person");
-
-    String authorization, header;
-    if(login != null && password != null) {
-        authorization =
-                String.format("Добро пожаловать, %s %s", person.getFirstName(), person.getMiddleName());
-        header = "<h6 class=\"head6\"><a href=\"/exit\" class=\"regHref\">Выйти</a></h6>";
-    }else {
-        authorization = "\n" +
-                "\t\t\t\t\t\t\t\t<form action=\"/authorization\" method=\"post\">\n" +
-                "\t\t\t\t\t\t\t\t\t<label for=\"login\">Логин</label><br>\n" +
-                "\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"login\" name=\"login\"><br>\n" +
-                "\t\t\t\t\t\t\t\t\t<label for=\"password\">Пароль</label><br>\n" +
-                "\t\t\t\t\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"password\"><br>\n" +
-                "\t\t\t\t\t\t\t\t\t<input class=\"enter\" type=\"submit\" value=\"Войти\">\n" +
-                "\t\t\t\t\t\t\t\t</form>";
-        header = "<h6 class=\"head6\">Вход/<a href=\"/\" class=\"regHref\">Регистрация</a></h6>";
-    }
+    AuthorizationView authorizationView = new AuthorizationView();
+%>
+<%
+	Person person = (Person) request.getSession().getAttribute("person");
+	boolean isLog = request.getSession().getAttribute("isLog");
+	String authorization = authorizationView.getAuthorization(isLog, person);
+	String headerAuthForm = authorizationView.getHeader(isLog);
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -48,7 +35,7 @@
         <div class="col-md-12 block2">
             <div class="row justify-content-end">
                 <div class="col-lg-3 block5">
-                    <%=header%>
+                    <%=headerAuthForm%>
                     <div class="row justify-content-center">
                         <div class="col-10 input">
                             <%=authorization%>

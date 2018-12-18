@@ -1,4 +1,4 @@
-package ru.dmitriikotiashov.api;
+package ru.dmitriikotiashov.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpEntity;
@@ -32,19 +32,17 @@ public class Authorization {
         String login = parameterMap.get("login")[0];
         String password = parameterMap.get("password")[0];
         Person person = authorizationResponse(login, password);
-        request.getSession().setAttribute("login", login);
-        request.getSession().setAttribute("password", password);
-        request.getSession().setAttribute("person", person);
+        boolean isLog = person != null;
+        request.getSession().setAttribute("isLog", isLog);
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("person", person);
         modelAndView.setViewName("index");
         return modelAndView;
     }
 
     @RequestMapping(value = "/exit", method = RequestMethod.GET)
     public ModelAndView exit(HttpServletRequest request){
-        request.getSession().removeAttribute("login");
-        request.getSession().removeAttribute("password");
-        request.getSession().removeAttribute("person");
+        request.getSession().removeAttribute("isLog");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
         return modelAndView;
