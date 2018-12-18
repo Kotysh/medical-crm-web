@@ -34,8 +34,8 @@ public class Authorization {
         Person person = authorizationResponse(login, password);
         boolean isLog = person != null;
         request.getSession().setAttribute("isLog", isLog);
+        request.getSession().setAttribute("person", person);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("person", person);
         modelAndView.setViewName("index");
         return modelAndView;
     }

@@ -1,6 +1,10 @@
 package ru.dmitriikotiashov.view;
 
-public class DoctorsView {
+import ru.dmitriikotiashov.entities.Doctor;
+
+import java.util.List;
+
+public class DoctorView {
 
     public String getDoctors(List<Doctor> doctors){
         StringBuilder doctorsString = new StringBuilder("<div class=\"row justify-content-center\">\n");

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.dmitriikotiashov.model.DoctorModel;
 
 @Controller
-public class DoctorController {
+public class DoctorViewController {
 
     DoctorModel doctorModel = new DoctorModel();
 

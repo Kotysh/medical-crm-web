@@ -1,13 +1,14 @@
 <%@ page import="ru.dmitriikotiashov.entities.Doctor" %>
 <%@ page import="ru.dmitriikotiashov.entities.Person" %>
+<%@ page import="ru.dmitriikotiashov.view.AuthorizationView" %>
 <%
     AuthorizationView authorizationView = new AuthorizationView();
 %>
 <%
-	Person person = (Person) request.getSession().getAttribute("person");
-	boolean isLog = request.getSession().getAttribute("isLog");
-	String authorization = authorizationView.getAuthorization(isLog, person);
-	String headerAuthForm = authorizationView.getHeader(isLog);
+    Person person = (Person) request.getSession().getAttribute("person");
+    Boolean isLog = (Boolean) request.getSession().getAttribute("isLog");
+    String authorization = authorizationView.getAuthorization(isLog, person);
+    String headerAuthForm = authorizationView.getHeader(isLog);
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>

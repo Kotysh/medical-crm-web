@@ -1,8 +1,11 @@
 package ru.dmitriikotiashov.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import ru.dmitriikotiashov.model.DoctorModel;
 
 /**
  * Created by Дмитрий on 24.11.2018.

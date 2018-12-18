@@ -1,9 +1,11 @@
 package ru.dmitriikotiashov.view;
 
+import ru.dmitriikotiashov.entities.Person;
+
 public class AuthorizationView {
 
-    public String getAuthorization(boolean isLog, Person person){
-        if(isLog) {
+    public String getAuthorization(Boolean isLog, Person person){
+        if(isLog != null && isLog) {
             return String.format("Добро пожаловать, %s %s", person.getFirstName(), person.getMiddleName());
         }else {
             return "\n" +
@@ -17,8 +19,8 @@ public class AuthorizationView {
         }
     }
 
-    public String getHeader(boolean isLog){
-        if(isLog) {
+    public String getHeader(Boolean isLog){
+        if(isLog != null && isLog) {
             return  "<h6 class=\"head6\"><a href=\"/exit\" class=\"regHref\">Выйти</a></h6>";
         }else {
             return  "<h6 class=\"head6\">Вход/<a href=\"/\" class=\"regHref\">Регистрация</a></h6>";
