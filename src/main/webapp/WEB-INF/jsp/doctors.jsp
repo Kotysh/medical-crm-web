@@ -16,6 +16,7 @@
 <%
 	List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctors");
 	String doctorsHtml = doctorView.getDoctors(doctors);
+	String formSearchDoctors = doctorView.getFormSearchDoctor();
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -72,6 +73,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 block3">
+				<h3>Форма поиска</h3>
+				<%=formSearchDoctors%>
 				<h3>Сотрудники зарегестрированные в системе</h3>
 				<%=doctorsHtml%>
 			</div>
