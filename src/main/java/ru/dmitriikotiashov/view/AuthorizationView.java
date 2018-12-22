@@ -9,7 +9,7 @@ public class AuthorizationView {
             return String.format("Добро пожаловать, %s %s", person.getFirstName(), person.getMiddleName());
         }else {
             return "\n" +
-            "\t\t\t\t\t\t\t\t<form action=\"/authorization\" method=\"post\">\n" +
+            "\t\t\t\t\t\t\t\t<form action=\"/auth\" method=\"post\">\n" +
             "\t\t\t\t\t\t\t\t\t<label for=\"login\">Логин</label><br>\n" +
             "\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"login\" name=\"login\"><br>\n" +
             "\t\t\t\t\t\t\t\t\t<label for=\"password\">Пароль</label><br>\n" +

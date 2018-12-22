@@ -19,14 +19,14 @@ import java.util.Map;
  * Created by Дмитрий on 04.12.2018.
  */
 @Controller
-public class Authorization {
+public class AuthorizationController {
 
     RestTemplate restTemplate = new RestTemplate();
     ObjectMapper objectMapper = new ObjectMapper();
 
     public static final String AUTHORIZATION_PATH = "http://localhost:8088/authorization";
 
-    @RequestMapping(value = "/authorization", method = RequestMethod.POST)
+    @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public ModelAndView authorization(HttpServletRequest request){
         Map<String, String[]> parameterMap = request.getParameterMap();
         String login = parameterMap.get("login")[0];

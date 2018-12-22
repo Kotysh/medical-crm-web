@@ -1,4 +1,3 @@
-<%@ page import="ru.dmitriikotiashov.entities.Doctor" %>
 <%@ page import="ru.dmitriikotiashov.entities.Person" %>
 <%@ page import="ru.dmitriikotiashov.view.AuthorizationView" %>
 <%
@@ -69,6 +68,13 @@
             <hr>
             <h6>e-mail: medicalcrm2018@mail.ru</h6>
             <h6>telephone: +799999999999</h6>
+            <hr>
+            <h6>Либо напишите нам: </h6>
+            <form action="/contacts" method="post">
+                <textarea name="message" cols="50" rows="6"></textarea>
+                <br>
+                <input type="submit" value="Отправить">
+            </form>
         </div>
     </div>
     <div class="row">
